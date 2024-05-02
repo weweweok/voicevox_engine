@@ -34,8 +34,6 @@ jobs:
             #run: safety check -r requirements.txt -r requirements-dev.txt -r requirements-test.txt -r requirements-license.txt -o bare
 
       - name: Notify Discord of security testing result
-        env: 
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         uses: sarisia/actions-status-discord@v1
         if: always()
         with:
