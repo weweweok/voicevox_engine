@@ -36,15 +36,9 @@ jobs:
       - name: Notify Discord of security testing result
         env: 
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-
-          curl -H "Content-Type: application/json" -X POST -d '{
-          "username": "GitHub",
-          "embeds": [            
-          {          
-            "title": "脆弱性診断結果",
-            "description": "脆弱性診断結果",
-            "url": "https://github.com/***"
-          }]                               
-          } ' "$DISCORD_WEBHOOK_URL" 
-
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          username: GitHub Actions
+          url: "https://github.com/***"
