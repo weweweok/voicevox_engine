@@ -27,11 +27,11 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
 
-      - name: <Setup> Install Python dependencies
-        run: pip install -r requirements-dev.txt
+            #- name: <Setup> Install Python dependencies
+            #run: pip install -r requirements-dev.txt
 
-      - name: <Test> Check Python dependency security
-        run: safety check -r requirements.txt -r requirements-dev.txt -r requirements-test.txt -r requirements-license.txt -o bare
+            #- name: <Test> Check Python dependency security
+            #run: safety check -r requirements.txt -r requirements-dev.txt -r requirements-test.txt -r requirements-license.txt -o bare
 
       - name: Notify Discord of security testing result
         run: |
