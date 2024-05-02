@@ -45,5 +45,5 @@ jobs:
             "description": "脆弱性診断結果",
             "url": "https://github.com/***"
           }]                               
-          } ' DISCORD_WEBHOOK_URL 
+          } ' "$DISCORD_WEBHOOK_URL" 
 
